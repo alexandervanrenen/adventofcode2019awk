@@ -6,7 +6,7 @@ awk -F "," '
   }
 
   for(noun=0; noun<=99; noun++) {
-    print "noun=" noun
+    print noun "%"
     for(verb=0; verb<=99; verb++) {
       for(i = 0; i<=NF; i++) {
         $i = initial_memory[i]
@@ -35,11 +35,13 @@ awk -F "," '
       }
 
       if($1 == 19690720) {
-        print noun
-        print verb
-        print $0
+        print "Found solution:"
+        print "noun= " noun
+        print "verb= " verb
+        print "result= " $0
       }
     }
   }
+  print "100%"
 }
 '
