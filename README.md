@@ -5,7 +5,10 @@ I will keep a log of some thoughts on each exercise, about what I did and (mainl
 
 Day 01
 ------
-I started one day late .. I might catch up on this one later. 
+Did this one after 03 as I started late only on the second day.
+This one was only a warmup, but I love the continous story :)
+And awk suits itself very nicely to this task.
+Could it be that you have to pick the right hammer for each nail !?
 
 Day 02
 ------
