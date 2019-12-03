@@ -59,3 +59,36 @@ Also interestingly, awk does not support local variables.
 Unless they are function parameters.
 This is important when writing recursive functions like this.
 Initially I used a (unintensionally) local iterator variable i, which was then shared over all recursive calls.
+
+Day 03
+------
+Finished day 3, hurray!
+I am growing a less fond of awk for doing these challanges.
+What kind of annoys me is that variables are usually global and only local if they are function parameters.
+```awk
+function foo(_i) {
+    for(_i=0; _i<10; _i++) { .. }
+}
+```
+If dont makle `i` a parameter, you end up having your it as a global variable.
+When you have a loop that calls a function that uses another loop, it leads to some very un-wanted behavior.
+Having learned this lession the hard way, yesterday, today, I ended up using a lot of function parameters to get my variables to be local.
+Cause this is what we object oriented programmers like: encapsulation, right.
+However, this ended up being kind of messy and feels ocward.
+I thing tomorrow, I only do this for the `i` or on-demand ?
+
+Another thing, while talking about object oriented programming: I miss objects.
+However, I learned that there are two kinds of variables: arrays and non-arrays.
+Arrays are passed by reference and non-arrays are passed by value to functions.
+And arrays are not arrays, but maps/dictionaries.
+So I guess they could be used to do somehing like objects:
+```awk
+point["x"] = 5;
+point["y"] = 8;
+points[5, 8] = "value"; 
+points[5, 8] = point; # ERROR, can't put arrays into arrays
+```
+
+All this considdered, I am obviously thinking of implementing my own scripting language ;p
+No, there is a lot I like about awk, but maybe I will try continue with a something else.
+I am thinking java script.
