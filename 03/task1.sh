@@ -1,9 +1,26 @@
 
 awk -F ',' '
 
-function draw(_route, _i, _x, _y, _max_x, _max_y, _output, _direction, _length, _size) {
+function set(output, x, y, route, _distance) {
+  if(output[x, y] != "" && output[x, y] != route && x!=0 && y!=0) {
+    _distance = (x<0 ? -x : x) + (y<0 ? -y : y)
+    if(!closest_found || _distance < closest_distance) {
+      closest_distance = _distance
+      closest_x = x
+      closest_y = y
+      closest_found = 1
+    }
+  }
+  output[x, y] = route
+}
+
+function draw(_route, _i, _x, _y, _max_x, _max_y, _min_x, _min_y, _output, _direction, _length, _size) {
+  closest_found = false
+
   _max_x = center_x
   _max_y = center_y
+  _min_x = center_x
+  _min_y = center_y
   delete _output
   for(_route=0; _route<next_route_id; _route++) {
     _x = center_x
@@ -14,44 +31,50 @@ function draw(_route, _i, _x, _y, _max_x, _max_y, _output, _direction, _length, 
       _length = substr(routes[_route, _i], 2)
       if(_direction == "R") {
         for(; _length>0; _length--) {
-          _output[_x, _y] = _route ""
+          set(_output, _x, _y, _route)
           _x++
         }
       } else if(_direction == "L") {
         for(; _length>0; _length--) {
-          _output[_x, _y] = _route ""
+          set(_output, _x, _y, _route)
           _x--
         }
       } else if(_direction == "U") {
         for(; _length>0; _length--) {
-          _output[_x, _y] = _route ""
+          set(_output, _x, _y, _route)
           _y++
         }
       } else if(_direction == "D") {
         for(; _length>0; _length--) {
-          _output[_x, _y] = _route ""
+          set(_output, _x, _y, _route)
           _y--
         }
       }
-      _output[_x, _y] = _route ""
 
       _max_x = _x>_max_x ? _x : _max_x
       _max_y = _y>_max_y ? _y : _max_y
+      _min_x = _x<_min_x ? _x : _min_x
+      _min_y = _y<_min_y ? _y : _min_y
     }
+    _output[_x, _y] = _route
   }
 
-  for(_y=_max_y+2; _y>=0; _y--) {
-    for(_x=0; _x<=_max_x+2; _x++) {
-      printf "%s", (_output[_x, _y] ? _output[_x, _y] : "-")
-    }
-    print ""
-  }
+#  for(_y=_max_y+2; _y>=_min_y-2; _y--) {
+#    for(_x=_min_x-2; _x<=_max_x+2; _x++) {
+#      printf "%s", (_output[_x, _y] != "" ? _output[_x, _y] : "-")
+#    }
+#    print ""
+#  }
+
+  print (closest_found ? "yes" : "no")
+  print closest_x " | " closest_y
+  print closest_distance
 }
 
 BEGIN {
   next_route_id = 0
-  center_x = 2
-  center_y = 2
+  center_x = 0
+  center_y = 0
 }
 
 {
