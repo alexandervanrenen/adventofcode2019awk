@@ -95,3 +95,41 @@ points[5, 8] = point; # ERROR, can't put arrays into arrays
 All this considdered, I am obviously thinking of implementing my own scripting language ;p
 No, there is a lot I like about awk, but maybe I will try continue with a something else.
 I am thinking java script.
+
+Day 04
+------
+Brute force for the win !
+Rather easy one, I am just wondering what the most efficient way would be to solve this.
+Currently (task2.sh), I am converting the input string into a number which I use to iterate over the input range.
+Then I extract each digit of the number into an array and do the checks.
+We will call this version the *vanilla* version and see what we can do!
+First, I guess I should replace the awk array with regular variables, I don't trust awk to optimize them out and these lookup can't be for free.
+```
+vanilla: 4.43s
+no-arrays: 0.78s
+```
+Yeah, though so, but I had to unroll the loop in HasAdjacentDigitsThatAreEqual, because without an array, I cant use an iterator.
+(Unrolling does not significantly help, the vanilla implementation, maybe like 0.2, but idc).
+Next I think, we should be smarter when incrementing the password.
+Assuming we do an increment from 259999 to 260000, because of the AreDigitsAlwaysIncreasing rule all numbers till 266666 are out, but we still iterate them.
+So lets first swap the order in which we check the rules: 
+```
+checking AreDigitsAlwaysIncreasing first: 0.56s
+```
+Next, lets fast forward to the next possible number (266666) whenever we detect a vialation of AreDigitsAlwaysIncreasing.
+Ok, turns out being smart about the algorithm is very benefitial.
+But lets see if the other tricks are still useful:
+```
+fast-forward: 0.01s
+- checking AreDigitsAlwaysIncreasing first: 0.01s
+- no-arrays: 0.02s
+```
+Ok, so arrays are kind of slowing it down, but the smarter algorithm really helps out.
+I guess now there is not really a way to continue optimizing, unless I would use another way to measure time.
+And I think I am to lazy to look one up.
+The final version is in task2_2.sh.
+
+I think one more optimization, that might be benificial would be to stop converting the password from a number to individual digits (and back).
+Instead, I could work always on digits and just implement the increment by hand.
+That would save a lot of mod and divs.
+But its getting late, my time measurement is broken, and the elves are already happy :)
