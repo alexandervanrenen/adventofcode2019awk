@@ -133,3 +133,15 @@ I think one more optimization, that might be benificial would be to stop convert
 Instead, I could work always on digits and just implement the increment by hand.
 That would save a lot of mod and divs.
 But its getting late, my time measurement is broken, and the elves are already happy :)
+
+Day 05
+------
+New day, new luck.
+Being more happy with awk again.
+Should always remember that gawk != awk and that if(var) does not check if the variable is defined:
+```awk
+echo "" | awk '{asd = 0; if(asd) {print "defined"} else {print "NOT defined"}}' -> NOT defined
+
+echo "" | awk '{asd = 0; if(length(asd) > 0) {print "defined"} else {print "NOT defined"}}' -> defined
+echo "" | awk '{         if(length(asd) > 0) {print "defined"} else {print "NOT defined"}}' -> NOT defined
+```
