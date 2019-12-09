@@ -155,7 +155,7 @@ Day 07
 ------
 Got busy over the weekend.
 Trying to catch up.
-Having no propper encapsulation makes it a bit harder to extend existing programs, but actually less bad than expected.
+Having no proper encapsulation makes it a bit harder to extend existing programs, but actually less bad than expected.
 Might be because of the small program size.
 Had a nasty bug in the intcode program, copy pasted the code for equal from less than and forgot to change the sign.
 20 minutes of intcode program reading to figure that out .. of course this case only gets triggered in the 4th amplifier :(
@@ -171,3 +171,12 @@ Maybe in awk I should always thing 1-based, I thought its only the input, but ev
  
   print substr("asd",1,1) # -> 'a'
 ```
+
+Day 10
+------
+This time we apparently completed the incode program, by simply adding relative addressing and thus allowing for a program stack.
+I was starting to hate these programs and the world while hand-debugging in Day 07.
+But now that they are "completed", I fear this might have been the last intcode program task.
+I am gonna miss the intcode program tasks.
+I hope they are not completely gone.
+I hope I wont regrett saying that.
