@@ -145,3 +145,8 @@ echo "" | awk '{asd = 0; if(asd) {print "defined"} else {print "NOT defined"}}' 
 echo "" | awk '{asd = 0; if(length(asd) > 0) {print "defined"} else {print "NOT defined"}}' -> defined
 echo "" | awk '{         if(length(asd) > 0) {print "defined"} else {print "NOT defined"}}' -> NOT defined
 ```
+
+Day 06
+------
+Super cool, easy, fun, chill task :)))
+But no time to write or optimize today.
