@@ -159,3 +159,15 @@ Having no propper encapsulation makes it a bit harder to extend existing program
 Might be because of the small program size.
 Had a nasty bug in the intcode program, copy pasted the code for equal from less than and forgot to change the sign.
 20 minutes of intcode program reading to figure that out .. of course this case only gets triggered in the 4th amplifier :(
+
+Day 08
+------
+Maybe in awk I should always thing 1-based, I thought its only the input, but even
+```awk
+  split("hi", xxx, "")
+  print xxx[0] # -> ''
+  print xxx[1] # -> 'h'
+  print xxx[2] # -> '1'
+ 
+  print substr("asd",1,1) # -> 'a'
+```
