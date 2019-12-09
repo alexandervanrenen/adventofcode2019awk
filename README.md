@@ -150,3 +150,12 @@ Day 06
 ------
 Super cool, easy, fun, chill task :)))
 But no time to write or optimize today.
+
+Day 07
+------
+Got busy over the weekend.
+Trying to catch up.
+Having no propper encapsulation makes it a bit harder to extend existing programs, but actually less bad than expected.
+Might be because of the small program size.
+Had a nasty bug in the intcode program, copy pasted the code for equal from less than and forgot to change the sign.
+20 minutes of intcode program reading to figure that out .. of course this case only gets triggered in the 4th amplifier :(
