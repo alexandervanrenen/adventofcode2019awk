@@ -172,7 +172,7 @@ Maybe in awk I should always thing 1-based, I thought its only the input, but ev
   print substr("asd",1,1) # -> 'a'
 ```
 
-Day 10
+Day 09
 ------
 This time we apparently completed the incode program, by simply adding relative addressing and thus allowing for a program stack.
 I was starting to hate these programs and the world while hand-debugging in Day 07.
@@ -180,3 +180,16 @@ But now that they are "completed", I fear this might have been the last intcode 
 I am gonna miss the intcode program tasks.
 I hope they are not completely gone.
 I hope I wont regrett saying that.
+
+Day 10
+------
+Puh, the collision test phase was a lot of fun.
+I could trim down the number of tests by two, because I always check if a is visible from b and then later if b is visible from a.
+I opted for the naiive way, because it only gives a factor of 2 and I used a neat algorithm for the collision test already.
+Hence, no biggy and on the upside: I hade a simple ``NumberOfVisibleAsteroidsFromGivenPosition`` function.
+I thought that I might be able to re-use this in the second task.
+Sadly, not.
+And even more sadly, it was about angles :(
+Took me a while to get thing right, the fliped coord system did not make it easier, but I think I understood the atan2 function.
+And I realized that I can still have everything in my task.sh files and still use pipes.
+So for future tasks I have pipes at my disposal and therefore all the gloy of bash :)
