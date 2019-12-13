@@ -193,3 +193,11 @@ And even more sadly, it was about angles :(
 Took me a while to get thing right, the fliped coord system did not make it easier, but I think I understood the atan2 function.
 And I realized that I can still have everything in my task.sh files and still use pipes.
 So for future tasks I have pipes at my disposal and therefore all the gloy of bash :)
+
+Day 11
+------
+Intcode programs are back, hurray.
+
+Day 12
+------
+Great task, the first one with some math/thinking :) 
