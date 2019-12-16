@@ -201,3 +201,9 @@ Intcode programs are back, hurray.
 Day 12
 ------
 Great task, the first one with some math/thinking :) 
+
+Day 13
+------
+Lost a bit of ground over the weekend.
+Gotta catch up now, I guess people are not quitting because the challenges get harder, but the time around christmas is getting more sparse.
+Amazing task today: using intcode programs to simulate an arcade game :)
