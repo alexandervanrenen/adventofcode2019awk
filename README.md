@@ -5,6 +5,8 @@ I will keep a log of some thoughts on each exercise, about what I did and (mainl
 
 Day 01
 ------
+*Calculate mass required to launch rocket.*
+
 Did this one after 03 as I started late only on the second day.
 This one was only a warmup, but I love the continous story :)
 And awk suits itself very nicely to this task.
@@ -12,6 +14,8 @@ Could it be that you have to pick the right hammer for each nail !?
 
 Day 02
 ------
+*Introduction of intcode programs and some program analysis.*
+
 Fun scenario!
 I think you can not implement these intcode programs with a single pass:
 A statement can access memory anywhere and in order to read from an address you need to parse the intcode program up until this address.
@@ -65,6 +69,8 @@ Initially I used a (unintensionally) local iterator variable i, which was then s
 
 Day 03
 ------
+*Calculate first position for when two wires cross.*
+
 Finished day 3, hurray!
 I am growing a less fond of awk for doing these challanges.
 What kind of annoys me is that variables are usually global and only local if they are function parameters.
@@ -98,6 +104,8 @@ I am thinking java script.
 
 Day 04
 ------
+*Calculate number of valid passwords, with some criteria.*
+
 Brute force for the win !
 Rather easy one, I am just wondering what the most efficient way would be to solve this.
 Currently (task2.sh), I am converting the input string into a number which I use to iterate over the input range.
@@ -136,6 +144,8 @@ But its getting late, my time measurement is broken, and the elves are already h
 
 Day 05
 ------
+*Add I/O, immedate mode, and jumps to int code program.*
+
 New day, new luck.
 Being more happy with awk again.
 Should always remember that gawk != awk and that if(var) does not check if the variable is defined:
@@ -148,11 +158,15 @@ echo "" | awk '{         if(length(asd) > 0) {print "defined"} else {print "NOT 
 
 Day 06
 ------
+*Graph traveral on orbiting solar systems.*
+
 Super cool, easy, fun, chill task :)))
 But no time to write or optimize today.
 
 Day 07
 ------
+*Five intcode programs in a row with a feedback loop.*
+
 Got busy over the weekend.
 Trying to catch up.
 Having no proper encapsulation makes it a bit harder to extend existing programs, but actually less bad than expected.
@@ -162,6 +176,8 @@ Had a nasty bug in the intcode program, copy pasted the code for equal from less
 
 Day 08
 ------
+*Displaying a simple bmp like image file and reading a code from it.*
+
 Maybe in awk I should always thing 1-based, I thought its only the input, but even
 ```awk
   split("hi", xxx, "")
@@ -174,6 +190,8 @@ Maybe in awk I should always thing 1-based, I thought its only the input, but ev
 
 Day 09
 ------
+*Add relative addressing to the intcode program interpreter.*
+
 This time we apparently completed the incode program, by simply adding relative addressing and thus allowing for a program stack.
 I was starting to hate these programs and the world while hand-debugging in Day 07.
 But now that they are "completed", I fear this might have been the last intcode program task.
@@ -183,6 +201,8 @@ I hope I wont regrett saying that.
 
 Day 10
 ------
+*2d collision test and some angle math. +*
+
 Puh, the collision test phase was a lot of fun.
 I could trim down the number of tests by two, because I always check if a is visible from b and then later if b is visible from a.
 I opted for the naiive way, because it only gives a factor of 2 and I used a neat algorithm for the collision test already.
@@ -196,19 +216,27 @@ So for future tasks I have pipes at my disposal and therefore all the gloy of ba
 
 Day 11
 ------
+*Working with I/O to program a robot to paint the ship.*
+
 Intcode programs are back, hurray.
 
 Day 12
 ------
+*Simulating a n-body problem with ints and figuring out repeats. +*
+
 Great task, the first one with some math/thinking :) 
 
 Day 13
 ------
+*Programming an AI for a simple game.*
+
 Lost a bit of ground over the weekend.
 Gotta catch up now, I guess people are not quitting because the challenges get harder, but the time around christmas is getting more sparse.
 Amazing task today: using intcode programs to simulate an arcade game :)
 
 Day 14
 ------
+*Chaining chemical reactions to produce fuel. +*
+
 Not that easy.
 Curious if there is an analytical solution ? .. but too late today :(
