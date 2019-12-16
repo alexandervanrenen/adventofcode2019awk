@@ -233,6 +233,20 @@ Day 13
 Lost a bit of ground over the weekend.
 Gotta catch up now, I guess people are not quitting because the challenges get harder, but the time around christmas is getting more sparse.
 Amazing task today: using intcode programs to simulate an arcade game :)
+I got a bit stuck debugging for a while, because I had to track the position of the ball and the paddle to make my AI provide the correct input to the game on each tick/frame.
+Originally, I did this while drawing the game state to console.
+To speed up processing I skipped drawing it every frame and therefore lost the most up to date position of the ball and the paddle.
+To compensate, I put the tracking code into the function processing the output of the game.
+However, I forgot to remove the initializatin code (for whatever reason I had that) from the draw function.
+Hence, each draw function resets the position of the ball and paddle to zero, hence no controller input, hence lose.
+Took me a bit to find this.
+Global variables are kind of a pain.
+I think they make these little programs here a lot easiert to write, because when I set a variable ANYWHERE, I immediately have it EVERYWHERE.
+(Without passing it through 10 functions).
+However, you also easily loose control.
+And in C++ you can more or less do the same, but you need to declare your variables in a central place.
+This way you can see which ones are global and which ones are not.
+But I guess this would not have stopped me from resetting them in draw.
 
 Day 14
 ------
