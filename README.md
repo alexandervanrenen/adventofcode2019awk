@@ -254,3 +254,51 @@ Day 14
 
 Not that easy.
 Curious if there is an analytical solution ? .. but too late today :(
+
+Day 15
+------
+*Guiding a robot through a maze. +*
+
+A bit of coding you need to do here.
+The way my intcode program works, I can not use recursion when doing I/O.
+Therefore, I need to manually implement stacks for state management instead of using recursion.
+One nice thing about my approach: it works for mazes with islands and with larger open areas.
+My command work queue (containing directions the robto has to go to next) avoids the need for implementing bfs:
+If you use a work queue with coordinates to explore next, you still need to find a way to move the robot there.
+To do that you need a path finding algorithm -> bfs.
+My command queue starts out like this:
+```
+[NORTH, SOUTH, EAST, WEST]
+```
+Everytime the intcode program wants input, we pop a command from the queue.
+When we get output from the intcode program we do the following:
+```
+if(hit wall) {
+    remember that there is a wall and continue with next command
+}
+
+else if(has been there before) {
+    go back
+}
+
+else {
+    enque a special goback command, that does not trigger further exploration when executed
+    add all other directions normally
+}
+```
+Short example:
+```
+Step 1:
+queue: [NORTH, SOUTH, EAST, WEST], location=(0,0), action taken: go west
+-> No wall
+
+Step 2:
+[NORTH, SOUTH, EAST, GO_BACK_FROM_WEST, NORTH, SOUTH, WEST], location=(1,0), action taken: go west
+-> Hit wall
+
+Step 3:
+[NORTH, SOUTH, EAST, GO_BACK_FROM_WEST, NORTH, SOUTH], location=(1,0), action taken: go south
+-> Hit wall
+
+.. yeah and so on
+```
