@@ -302,3 +302,21 @@ Step 3:
 
 .. yeah and so on
 ```
+
+Day 16
+------
+*Matrix multiplication*
+
+Puh, this one almost broke me.
+I am a bit behind, because of work and other obligations, but this task did not help.
+I think my problem was that I was so fixed on solving this matrix multiplication problem, that I did no take the time to think about how the result is calculated.
+If I would have looked at that earlier, I would have realized the short cut.
+
+Day 17
+------
+*Robot navigation on scaffolds*
+
+This one was a lot of fun.
+I think I did too much coding.
+Could have simply created the path and then done it by hand.
+But I realized this before doing it and did it anyway, because I liked the code :p
